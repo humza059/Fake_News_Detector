@@ -1,0 +1,53 @@
+==================================================
+OPTION 1: FLUTTER (DART)
+==================================================
+Add this dependency to your pubspec.yaml:
+  http: ^1.1.0
+
+--------------------------------------------------
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+Future<void> predictNews(String text) async {
+  // Use 10.0.2.2 if testing on Android Emulator
+  // Use your PC's IP (e.g., 192.168.1.5) if using a real phone
+  final String apiUrl = 'http://10.0.2.2:8001/predict';
+
+  try {
+    final response = await http.post(
+      Uri.parse(apiUrl),
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({"text": text}),
+    );
+
+    if (response.statusCode == 200) {
+      final jsonResponse = jsonDecode(response.body);
+      print("Label: ${jsonResponse['label']}");          // REAL or FAKE
+      print("Confidence: ${jsonResponse['confidence']}"); // e.g. 0.95
+    } else {
+      print("Error: ${response.statusCode}");
+    }
+  } catch (e) {
+    print("Exception: $e");
+  }
+}
+
+==================================================
+OPTION 2: PYTHON (REQUESTS)
+==================================================
+pip install requests
+
+--------------------------------------------------
+import requests
+
+url = "http://127.0.0.1:8001/predict"
+payload = {"text": "The government passed a new bill today."}
+
+try:
+    response = requests.post(url, json=payload)
+    if response.status_code == 200:
+        print(response.json())
+    else:
+        print(f"Error: {response.status_code} - {response.text}")
+except Exception as e:
+    print(f"Connection failed: {e}")
