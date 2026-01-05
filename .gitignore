@@ -1,8 +1,70 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
 # Python
 venv/
 Backend/venv/
 __pycache__/
 *.py[cod]
 
-# Flutter
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains the workspace settings.
+.vscode/
+
+# Flutter/Dart/Pub
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
 build/
+
+# Android
+android/local.properties
+android/.gradle/
+android/app/build/
+android/key.properties
+
+# iOS
+ios/.generated/
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Generated.xcconfig
+ios/Flutter/app.flx
+ios/Flutter/app.zip
+ios/Flutter/db.sql
+ios/Flutter/fs_cached_data
+ios/Flutter/flutter_assets/
+ios/Flutter/view_resources/
+ios/Pods/
+ios/Runner.xcworkspace/
+ios/Flutter/ephemeral/
+
+# macOS
+macos/Flutter/ephemeral/
+macos/Pods/
+
+# Linux
+linux/flutter/ephemeral/
+
+# Windows
+windows/flutter/ephemeral/
+
+# Web
+web/build/
+web/flutter_bootstrap.js
