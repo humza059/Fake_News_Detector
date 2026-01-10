@@ -1,0 +1,21 @@
+# Exclude Backend from Frontend build context
+Backend/
+
+# Exclude system and git files
+.git/
+.gitignore
+.vscode/
+
+# Exclude build artifacts
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+
+# Exclude platform folders we don't need for web build
+android/
+ios/
+linux/
+macos/
+windows/

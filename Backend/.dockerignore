@@ -1,0 +1,15 @@
+# Exclude virtual environment
+venv/
+
+# Exclude python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Exclude git
+.git/
+.gitignore
+
+# Exclude local IDE settings
+.vscode/

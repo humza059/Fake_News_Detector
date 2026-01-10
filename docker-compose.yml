@@ -1,0 +1,16 @@
+services:
+  backend:
+    build: ./Backend
+    container_name: fake_news_backend
+    ports:
+      - "8001:8001"
+    restart: always
+
+  frontend:
+    build: .
+    container_name: fake_news_frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    restart: always
